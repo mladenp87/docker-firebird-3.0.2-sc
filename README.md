@@ -30,7 +30,7 @@ Firebird 3.0.2 SuperClassic
 		-v /somehostdir/firebird/backup/:/backup/ \
 		-v /somehostdir/firebird/data/:/data/ \
         -e FIREBIRD_PASSWORD=secret \
-		mladenp87/firebird3
+		mladenp87/firebird-3.0.2-sc
 
 ## Misc
 
