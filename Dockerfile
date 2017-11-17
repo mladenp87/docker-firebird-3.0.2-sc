@@ -1,8 +1,13 @@
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV TZ Europe/Sarajevo
 
-RUN apt-get update && apt-get install -y wget libtommath0 libicu-dev vim nano && \
+RUN echo $TZ > /etc/timezone && \
+    apt-get update && apt-get install -y wget libtommath0 libicu-dev vim nano tzdata && \
+    rm /etc/localtime && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata && \
     cd /root && \
     wget https://sourceforge.net/projects/firebird/files/firebird-linux-amd64/3.0.2-Release/Firebird-3.0.2.32703-0.amd64.tar.gz/download && \
     tar xzvpf download && cd Firebird* && ./install.sh -silent && \
