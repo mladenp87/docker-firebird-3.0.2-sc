@@ -17,6 +17,10 @@ Firebird 3.0.2 SuperClassic
 
  * 3050
 
+### Env
+
+ * TZ // You can set your timezone via this variable, if not specified then its default value is "Etc/UTC"
+ 
 ### Firebird credentials
 
  * Username: SYSDBA
@@ -30,6 +34,7 @@ Firebird 3.0.2 SuperClassic
 		-v /somehostdir/firebird/backup/:/backup/ \
 		-v /somehostdir/firebird/data/:/data/ \
         -e FIREBIRD_PASSWORD=secret \
+        -e TZ=Europe/Sarajevo \
 		mladenp87/firebird-3.0.2-sc
 
 ## Misc
