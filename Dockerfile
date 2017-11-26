@@ -13,6 +13,9 @@ ENV PATH $PATH:/opt/firebird/bin
 ADD run.sh /opt/firebird/run.sh
 RUN chmod +x /opt/firebird/run.sh
 
+VOLUME /data
+VOLUME /backup
+
 EXPOSE 3050
 
 ENTRYPOINT ["/opt/firebird/run.sh"]
